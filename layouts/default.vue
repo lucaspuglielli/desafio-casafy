@@ -19,6 +19,7 @@ body, html {
   font-family: "Open Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-size: 16px;
   color: rgba(99, 99, 99, 1);
+  overflow: hidden;
 }
 
 *, :after, :before {

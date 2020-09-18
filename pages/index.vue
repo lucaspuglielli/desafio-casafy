@@ -2,7 +2,7 @@
   <div>
     <FiltroMobile />
     <div class="lg:flex">
-      <div class="lg:w-1/2">
+      <div class="lg:w-1/2 overflow">
         <div class="cards bg-white">
           <div class="lg:relative lg:top-0 lg:z-20">
             <div class="hidden justify-between items-center relative bg-gray-100 h-12 px-2 pl-16">
@@ -22,7 +22,7 @@
                 </span>
               </button>
             </div>
-            <div class="flex justify-between items-center relative-h-12 bg-white shadow px-2 lg:pl-16">
+            <div class="flex justify-between items-center fixed width-custom relative-h-12 bg-white shadow px-2 lg:pl-16">
               <h1 class="search-total-items text-sm text-gray-500 ml-12">
                 <span class="font-semibold">&nbsp;{{ qtd }}</span>
                 imóveis
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div id="card-content" class="pt-6 lg:overflow-y-auto lg:overflow-x-visible map-content">
-            <div class="flex flex-wrap justify-evenly">
+            <div class="flex flex-wrap justify-evenly mt-12">
               <CardsImoveis v-for="imovel in imoveis" :id="imovel.id" :key="imovel.id" :imovel="imovel" />
             </div>
           </div>
@@ -53,7 +53,18 @@
           <FiltroBox />
         </div>
       </div>
-      <div class="lg:w-1/2"></div>
+      <div class="lg:w-1/2">
+        <div class="hidden md:flex md:justify-start md:z-10 md:sticky md:top-0 md:w-full">
+          <div class="md:absolute md:z-10 md:mt-4 md:pl-16 md:overflow-x-auto md:overflow-y-hidden md:max-w-full"></div>
+        </div>
+        <div class="search-map z-10 w-full h-screen lg:h-full map-screen min-h-screen close">
+          <div id="search-map" class="min-h-screen" style="position: relative; overflow: hidden;">
+            <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+              <div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -151,5 +162,22 @@ export default {
   top: 0;
   background-color: rgba(242, 242, 242, 1);
 }
-
+.overflow{
+  height: calc(100vh - 48px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.h-limiter{
+  height: calc(100vh - 60px);
+}
+.width-custom{
+  width: 50%;
+}
+@media (max-width: 768px){
+  .width-custom{
+  width: 100%;
+  background-color: #fff;
+  z-index: 999;
+  }
+}
 </style>

@@ -114,6 +114,7 @@ color: rgba(255, 255, 255, 1);
   background-color: rgba(255, 255, 255, 1);
   overflow: hidden;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 .stamp{
   position: absolute;
