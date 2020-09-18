@@ -5,7 +5,7 @@
       <div class="lg:w-1/2">
       <div class="cards bg-white">
         <div class="lg:relative lg:top-0 lg:z-20">
-          <div class="hidden lg:flex justify-between items-center relative bg-gray-100 h-12 px-2 pl-16">
+          <div class="hidden justify-between items-center relative bg-gray-100 h-12 px-2 pl-16">
             <div>
               <h1 id="total-properties" class="search-total-items text-sm text-gray-500 ml-10">
                 <span class="font-semibold">&nbsp;0</span>
@@ -27,9 +27,9 @@
               <span class="font-semibold">&nbsp;0</span>
               imóveis
             </h1>
-            <button class="relative justify-center items-center w-12 h-12 z-20 bg-teal-500 text-white hidden lg:flex">
+            <button class="relative justify-center items-center w-12 h-12 z-20 bg-teal-500 text-white hidden lg:flex button-postion-right">
               <span aria-label="Format List Bulleted Square icon" role="img" class="material-design-icon format-list-bulleted-square-icon text-5xl">
-                <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24" class="material-design-icon__svg">
+                <svg fill="currentColor" width="24" height="24" viewBox="0 0 24 24" class="material-design-icon__svg testetranformers">
                   <path d="M3,4H7V8H3V4M9,5V7H21V5H9M3,10H7V14H3V10M9,11V13H21V11H9M3,16H7V20H3V16M9,17V19H21V17H9">
                     <title>Format List Bulleted Square icon</title>
                   </path>
@@ -39,13 +39,15 @@
           </div>
         </div>
         <div id="card-content" class="pt-6 lg:overflow-y-auto lg:overflow-x-visible map-content">
-          <div class="flex flex-wrap justify-center"></div>
+          <div class="flex flex-wrap justify-center">
+            <CardsImoveis />
+          </div>
         </div>
       </div>
       <div class="filter close">
         <div class="lg:realtive lg:top-0 lg:z-30">
           <button id="search-adv-button" class="btn-close-filter flex-justify-center items-center">
-            <strong>Filtrar</strong>
+            <strong>FILTRAR</strong>
           </button>
         </div>
         <FiltroBox />
@@ -59,6 +61,7 @@
 <script>
 import FiltroMobile from '../components/FiltroMobile'
 import FiltroBox from '../components/FiltroBox'
+import CardsImoveis from '../components/CardsImoveis'
 export default {
   head () {
     return {
@@ -68,7 +71,8 @@ export default {
   name: 'Home',
   components: {
     FiltroMobile,
-    FiltroBox
+    FiltroBox,
+    CardsImoveis
   }
 }
 </script>
@@ -78,4 +82,53 @@ export default {
   z-index: 20;
   height: 100%;
 }
+.button-postion-right{
+  right: -3.65rem;
+}
+.testetranformers{
+  transform: scale(1.7);
+}
+.filter.close{
+  left: -100%;
+  position: absolute;
+}
+.btn-close-filter{
+  top: .5rem;
+  right: .5rem;
+  position: absolute;
+  z-index: 30;
+  height: 2.5rem;
+  background-color: rgba(252, 99 , 96, 1);
+  color: rgba(255, 255, 255, 1);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .filter{
+    margin-top: 3rem;
+  }
+  .btn-close-filter{
+    top: 3rem;
+    right: -6rem;
+    display: flex;
+    justify-content: center;
+    width: 6rem;
+    position: absolute;
+    height: 3rem;
+    z-index: 30;
+    background-color: rgba(252, 99, 96, 1);
+    color: rgba(255, 255, 255, 1);
+  }
+}
+  @media (min-width: 768px) {
+  .filter{
+    margin-top: 0;
+  }
+}
+.filter{
+  width: 100%;
+  top: 0;
+  background-color: rgba(242, 242, 242, 1);
+}
+
 </style>
