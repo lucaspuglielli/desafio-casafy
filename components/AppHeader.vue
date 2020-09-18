@@ -83,14 +83,19 @@ right: 0;
 left: 0;
 box-sizing: border-box;
 box-shadow: 0 3px 6px rgba(0,0,0,.16078);
-padding: .15rem .05rem .15rem .75rem;
+padding: .15rem .75rem .15rem .75rem;
 z-index: 50;
+position: relative;
 }
 .red-border-btn{
-  font-size: .6875rem;
+  font-size: .70rem;
   color: rgba(252, 99, 96, 1);
-  padding-right: .15rem .5rem;
+  padding: .25rem .5rem;
+  border: 1px solid;
+  border-radius: .25rem;
+  text-transform: uppercase;
   border-color: rgba(252, 99, 96, 1);
+  font-weight: bold;
 }
 .red-bg-btn-menu{
   padding: .25rem .5rem;
